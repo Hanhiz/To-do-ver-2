@@ -1,0 +1,165 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #a6cbff;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #111827;
+}
+
+.app-header h1 {
+  margin: 0 0 12px 0;
+  font-size: 24px;
+}
+
+.controls {
+  margin-bottom: 16px;
+}
+
+/* Two-column layout: left = task list, right = calendar */
+.layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Left column fixed-ish, right column grows */
+.left-pane {
+  flex: 0 0 360px; /* adjust width as needed */
+  max-width: 42%;
+  min-width: 280px;
+}
+
+.right-pane {
+  flex: 1 1 0;
+}
+
+/* Basic box styling for panes so it's obvious */
+.left-pane,
+.right-pane {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Responsive: stack on very narrow screens */
+@media (max-width: 720px) {
+  .layout {
+    flex-direction: column;
+  }
+  .left-pane, .right-pane {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+}
+
+/* TaskInput styles */
+.task-input {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.task-date {
+  flex: 0 0 150px;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  color: #111827;
+}
+
+.task-text {
+  flex: 1 1 auto;
+  padding: 8px 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow .12s, border-color .12s;
+}
+
+.task-text:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+}
+
+.task-submit {
+  flex: 0 0 88px;
+  padding: 8px 12px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .12s, transform .06s;
+}
+
+.task-submit:hover:not(:disabled) {
+  background: #1e40af;
+}
+
+.task-submit:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.task-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.task-error {
+  color: #b91c1c;
+  font-size: 13px;
+  margin-top: 6px;
+  width: 100%;
+}
